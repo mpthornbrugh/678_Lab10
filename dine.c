@@ -253,12 +253,9 @@ int check_for_deadlock()
      fscanf(statf, "%lu", &new_user_time);
      sys_progress[i] = new_sys_time;
      user_progress[i] = new_user_time;
+      sys_time[i] += new_sys_time;
+      user_time[i] += new_user_time;
      
-
-    printf("New System Time: %d\n", new_sys_time);
-    printf("New User Time: %d\n", new_user_time);
-    printf("Old System Time: %d\n", sys_time[i]);
-    printf("Old User Time: %d\n", user_time[i]);
     
     /*
      * 5. Use time values to determine if deadlock has occurred.
