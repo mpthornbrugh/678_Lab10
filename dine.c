@@ -256,6 +256,9 @@ int check_for_deadlock()
     printf("New User Time: %d\n", new_user_time);
     printf("Old System Time: %d\n", sys_time[i]);
     printf("Old User Time: %d\n", user_time[i]);
+      
+      
+      
     
     /*
      * 5. Use time values to determine if deadlock has occurred.
