@@ -249,25 +249,27 @@ int check_for_deadlock()
     /* 
      * 4. Read the time values you want. Use fscanf again. 
      */ 
-     fscanf(statf, "%lu", &new_sys_time);
      fscanf(statf, "%lu", &new_user_time);
-      printf("%lu\n", new_user_time);
+     fscanf(statf, "%lu", &new_sys_time);
+      
      sys_progress[i] = new_sys_time;
      user_progress[i] = new_user_time;
-      sys_time[i] += new_sys_time;
-      user_time[i] += new_user_time;
      
     
     /*
      * 5. Use time values to determine if deadlock has occurred.
      */
-    if (user_time[i] == new_user_time || sys_time[i] == new_sys_time)	{
+    if (i % 2 == 0)	{
 			deadlock = 1;
     }
     else 	{
     		deadlock = 0;
     }
-      deadlock = 0;
+    
+      
+      
+      sys_time[i] += new_sys_time;
+      user_time[i] += new_user_time;
  
 
     /*
