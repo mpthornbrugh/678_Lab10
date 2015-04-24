@@ -267,8 +267,8 @@ int check_for_deadlock()
     
       
       
-      sys_time[i] = new_sys_time;
-      sys_progress[i] = sys_time[i] + sys_progress[i];
+      sys_time[i] = sys_time[i] + new_sys_time;
+      sys_progress[i] = sys_time[i] - sys_progress[i];
  
 
     /*
