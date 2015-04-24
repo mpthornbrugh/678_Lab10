@@ -251,8 +251,6 @@ int check_for_deadlock()
      */ 
      fscanf(statf, "%lu", &new_user_time);
      fscanf(statf, "%lu", &new_sys_time);
-	 
-     user_progress[i] = new_user_time;
      
     
     /*
