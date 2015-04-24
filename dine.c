@@ -242,7 +242,7 @@ int check_for_deadlock()
      * HINT: Use the the * qualifier to skip tokens without storing them.
      */
     for (j = 0; j < 13; j++)	{
-		    fscanf(statf, "%*s");
+		fscanf(statf, "%*s");
     }
 
     
@@ -259,17 +259,19 @@ int check_for_deadlock()
     /*
      * 5. Use time values to determine if deadlock has occurred.
      */
-    if (i % 2 == 0)	{
+    if (new_user_time == user_time[i])	{
 			deadlock = 1;
     }
     else 	{
     		deadlock = 0;
+			user_time[i] += new_user_time;
+			user_progress[i] += user_progress[i];
     }
     
       
       
-      sys_time[i] += new_sys_time;
-      user_time[i] += new_user_time;
+      sys_time[i] = new_sys_time;
+      sys_progress[i] = sys_time[i] - sys_progress[i];
  
 
     /*
