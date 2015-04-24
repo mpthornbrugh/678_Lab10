@@ -262,7 +262,7 @@ int check_for_deadlock()
     else 	{
     		deadlock = 0;
 			user_time[i] =  user_time[i] + new_user_time;
-			user_progress[i] = new_user_time - user_progress[i];
+			user_progress[i] = user_time[i] - user_progress[i];
     }
     
       
